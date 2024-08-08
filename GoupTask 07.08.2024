@@ -1,0 +1,49 @@
+Discuss and find information about clean architecture
+
+Clean architecture is a software design philosophy that emphasizes the separation of concerns, maintainability, and scalability of code. 
+It divides the software into layers, each with a specific responsibility, ensuring that changes in one part of the system do not affect others.
+
+
+1. What's the importance of each layer
+
+Controller/API recieves information from the client, processes it, checks which service is needed and sends it to Business Logic Service. 
+Business logic service (BLS) is the custom rules or algorithms that handle the exchange of information between a database and user interface. 
+Data repository is a link between BLS and database to check input before accessing database, for example: does this user exist?
+A database is a systematic collection of data. 
+
+
+2. Why is there needed some kind of structure and architecture
+
+Scalable without having to do the whole thing again from beginning
+Clear separation of concerns makes the code easier to read, understand, and modify.
+Adaptability - Faster and more reliable updates and new features, leading to an application that evolves with user needs.
+Let's the business logic to be decoupled from the implementation details likie databases, freameworks and user interfaces.
+Applications built with clean architecture are less likely to have bugs or crashes due to well-structured code and thorough testing.
+Clear Architecture has a core principle The Dependency Rule, where code dependencies can only point inwards, e.g. nothing in an inner circle can know anything about something in an outer circle. This is important, because each layer has 
+distinct responsibilities, this makes the system easier to understand and maintain. It also offers great flexibility and adaptability.
+It is designed to make it easier to create stable apps even when outer elements such as UI, databases, or external APIs are always changing. 
+
+3. Find other architecture types, figure out pros and cons
+Hexagonal Architecture (Poerts and Adapters) - divides the system into core logic (inside hexagon) and external systems (adapters) that interact with the core through ports:
+	+ Isolation: core logic is isolated from external dependencies
+  + Testability: easy to test core logic without external dependencies
+  + Flexibility: adapters can be easily swapped without affecting the core logic (The Dependency Rule)
+  - Complexity: can be initially more complex to set up
+Onion Architecture - similar to Hexagonal, however it focuses more on the core domain logicbeing at the center and external dependencies at the outer layers.
+Event-Driven Architecture: Scalable and responsive but challenging to manage (for example stock trading platform)
+Microservices Architecture: Highly scalable and flexible. Independent deployment and development. Complex to manage and deploy. For example banking services. 
+Monolithic Architecture: A single-tiered software application where all components are interconnected and interdependent. Simple system but scalability is limited. For example:  Simple applications with limited scalability needs.
+
+
+Screaming Architecture:
++ makes the entry curve for the project much less steep
++ we can reason about where a certain feature goes, or what part of the software might be affected by a bug more easily
++ makes it easier to reason about the business behind the software
+
+Service-Oriented Architecture (SOA): 
++ Reusability: Services are designed to be reused across different applications.
++ Interoperability: Promotes the use of standard protocols, making integration easier.
++ Modularity: Services can be developed, deployed, and maintained independently.
+- Overhead: Web service communication can introduce performance overhead.
+- Complexity: Managing a large number of services and their interactions can be difficult.
+- Governance: Requires strong governance to ensure services are used consistently.
