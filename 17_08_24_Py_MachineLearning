@@ -35,7 +35,7 @@ Semi-Supervised learning is a machine learning algorithm that works between the 
 It’s particularly useful when obtaining labeled data is costly, time-consuming, or resource-intensive. 
 This approach is useful when the dataset is expensive and time-consuming. 
 Semi-supervised learning is chosen when labeled data requires skills and relevant resources in order to train or learn from it.
-For example, when creating a langage translation program. Some of the translation is labelled, but some of it is unlabeled to make more logical and accurate sentences. Thanks to this model, the translation programs have improved.
+For example, when creating a language translation program. Some of the translation is labelled, but some of it is unlabeled to make more logical and accurate sentences. Thanks to this model, the translation programs have improved.
 
 4) Reinforcement Learning 
 Reinforcement machine learning algorithm is a learning method that interacts with the environment by producing actions and discovering errors. 
@@ -102,7 +102,7 @@ Includes: Mean Absolute Error, Mean Squared Error, Root Mean Squared Error, R-sq
 
 3) Clustering Metrics
 For unsupervised learning tasks, clustering metrics help evaluate how well the algorithm has grouped similar instances. For example, dividing customers in to groups based on their spending behaviour. 
-Comparing their spending score (based on money spent on spending) with their annual income. 
+Comparing their spending score (money spent on shopping) with their annual income. 
 Includes: Silhouette Score, Adjusted Rand Index (ARI), Davies-Bouldin Index etc. 
 
 
