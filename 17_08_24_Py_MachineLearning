@@ -1,0 +1,144 @@
+Task: This is a complicated topic, teamwork is to look at scikit-learn library together. Suggested questions to discuss:
+
+1. What is an error rate? 
+
+In the context of the scikit-learn library (and machine learning in general), the error rate tells you how often a machine learning model gets things wrong.
+If you make 100 predictions and 20 of them are wrong, then the error rate is 20%.
+In other words, it's the percentage of times the model makes a mistake. A lower error rate means the model is doing better.
+
+In scikit-learn, you can compute the error rate after training a model by using Accuracy Score: First calculate the accuracy of the model using accuracy_score and subtract it from 1 to get the error rate.
+
+CODE: 
+from sklearn.metrics import accuracy_score
+# Assuming y_true are the actual labels and y_pred are the predicted labels
+accuracy = accuracy_score(y_true, y_pred)
+error_rate = 1 - accuracy
+print(f"Error Rate: {error_rate}")
+
+
+2. Where you could use other machine-learning models? 
+
+There are many ways to classify machine learning models but most commonly there are 4 main types of models: 
+
+1) Supervised Machine Learning
+In this, the model gets trained on a labeled dataset. For example- we have data of cats and dogs. We add some kind of label to the groups (like image). If we add a new cat/dog then 
+the machine can predict which group it belongs. 
+
+2) Unsupervised Machine Learning
+Unsupervised learning is a type of machine learning technique in which an algorithm discovers patterns and relationships using unlabeled data. 
+Unlike supervised learning, unsupervised learning doesn’t involve providing the algorithm with labeled target outputs. 
+The primary goal of Unsupervised learning is often to discover hidden patterns, similarities, or clusters within the data, which can then be used for various purposes, such as data exploration, visualization, dimensionality reduction, and more.
+For example in online shopping. If you have purchased some products in the past, the machine will make recommendations for future purchases based on your preferences. 
+
+3) Semi-Supervised Machine Learning
+Semi-Supervised learning is a machine learning algorithm that works between the supervised and unsupervised learning so it uses both labelled and unlabelled data. 
+It’s particularly useful when obtaining labeled data is costly, time-consuming, or resource-intensive. 
+This approach is useful when the dataset is expensive and time-consuming. 
+Semi-supervised learning is chosen when labeled data requires skills and relevant resources in order to train or learn from it.
+For example, when creating a langage translation program. Some of the translation is labelled, but some of it is unlabeled to make more logical and accurate sentences. Thanks to this model, the translation programs have improved.
+
+4) Reinforcement Learning 
+Reinforcement machine learning algorithm is a learning method that interacts with the environment by producing actions and discovering errors. 
+Trial, error, and delay are the most relevant characteristics of reinforcement learning. 
+In this technique, the model keeps on increasing its performance using Reward Feedback to learn the behavior or pattern. 
+These algorithms are specific to a particular problem e.g. Google Self Driving car, AlphaGo where a bot competes with humans and even itself to get better and better performers in Go Game. 
+Each time we feed in data, they learn and add the data to their knowledge which is training data. So, the more it learns the better it gets trained and hence experienced. 
+
+
+3. What is the difference between supervised and unsupervised training? 
+
+1) Supervised training - the data is LABELLED. Every data has some kind of parameter which can divide it into groups.  
+
+2) Unsupervised training - the data is NOT LABELLED. The model tries to find patterns, structures, or relationships within the data on its own.
+The model identifies inherent structures in the data, such as grouping similar items together or finding the underlying distribution of the data. 
+Techniques like clustering, dimensionality reduction, or association are commonly used.
+
+
+4. How to import different models from the scikit-learn package? 
+
+There are numerous model types: <model> --> linear_model, ensemble, svm, tree etc.
+All module types available: https://scikit-learn.org/stable/
+
+CODE: from sklearn.<module> import <model>
+
+Exmaples:
+1) Linear Models (assume a linear relationship between input features and the target variable. E.g Predicting housing prices, credit scoring.): 
+	- from sklearn.linear_model import LinearRegression
+  - from sklearn.linear_model import LogisticRegression
+2) Nearest Neighbours (classify data points based on the classes of their nearest neighbors in the feature space. It’s a non-parametric method, meaning it makes few assumptions about the data. E.g Text classification, recommendation system): 
+	- from sklearn.neighbors import NearestNeighbors
+3) Gaussian Naive Bays (assumes the features follow a Gaussian (normal) distribution. It uses Bayes’ Theorem to predict the probability of each class given the input features. E.g Spam detection): 
+	- from sklearn.naive_bayes import GaussianNB
+4) Decision Trees (DTs) (split the data into branches based on feature values, making decisions at each node to classify or predict outcomes. The process continues until a certain stopping criterion is met. E.g. Customer segmentation, loan approval): 
+ - from sklearn import tree
+5) Support Vector Machines (SVMs) (finds the optimal hyperplane that separates data points of different classes with the maximum margin. E.g. Image classification): 
+ - from sklearn import svm
+6) Ensembles (combines multiple models (e.g., Decision Trees) to improve predictive performance. E.g Fraud detection, risk assessment): 
+	- from sklearn.ensemble import RandomForestClassifier 
+  - from sklearn.ensemble import GradientBoostingRegressor
+
+
+5. How can you evaluate the performance of a machine learning model in scikit-learn? 
+
+When you want to know how good your model's predictions are, scikit-learn gives you three different ways to check:
+
+1) Estimator score method: Each model (like a classifier or regressor) has a built-in method called score(). This method gives you a quick way to check how good the model is based on its default criteria (like accuracy for classification).
+2) Scoring parameter: When you do things like cross-validation (testing the model on different parts of your data), scikit-learn uses a built-in scoring system to tell how well your model is doing. You can even define your own rules for scoring.
+3) Metric functions: Scikit-learn has a bunch of specific tools in the 'metric's' module. These tools calculate how much error your model is making. They are split into different types like classification metrics (for categorizing things), regression metrics (for predicting numbers), and clustering metrics (for grouping things).
++ Bonus) Finally, dummy estimators are simple models that make random predictions. You use them as a baseline to see if your real model is doing better than just guessing randomly.
+
+
+6. What metrics are commonly used for evaluation? 
+
+The most common metrics used for evaluation are: 
+
+1) Classification Metrics 
+These metrics are used to evaluate models that predict discrete classes (e.g., spam or not spam).
+Includes: Accuracy, Precision, Recall, F1 Score, Confusion Matrix, ROC-AUC (Receiver Operating Characteristic - Area Under the Curve) etc.
+
+2) Regression Metrics
+These metrics are used for evaluating models that predict continuous values. For example, predicting price of the house based on the squaremetres, location etc. 
+Includes: Mean Absolute Error, Mean Squared Error, Root Mean Squared Error, R-squared etc.
+
+3) Clustering Metrics
+For unsupervised learning tasks, clustering metrics help evaluate how well the algorithm has grouped similar instances. For example, dividing customers in to groups based on their spending behaviour. 
+Comparing their spending score (based on money spent on spending) with their annual income. 
+Includes: Silhouette Score, Adjusted Rand Index (ARI), Davies-Bouldin Index etc. 
+
+
+7. What is model overfitting, and how can it be prevented?
+
+Graph illustrating over- and underfitting: https://miro.medium.com/v2/resize:fit:720/format:webp/0*H377j9pbSHLQhkNd.png 
+Info from: https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d#253a
+
+Overfitting happens when a machine learning model becomes too good at remembering the training data but performs poorly on new, unseen data. 
+It's like a student memorizing answers for specific test questions instead of learning the concepts. 
+The model fits the training data so closely that it even captures noise* and random patterns that aren't actually helpful.
+(*In the context of machine learning, "noise" refers to irrelevant or random data in your dataset that doesn't represent the actual patterns or trends you're trying to learn. Noise can come from errors in data collection, unusual cases, or unpredictable fluctuations.)
+
+To prevent overfitting, you want the model to generalize well to new data. Here are 8 ways to do that:
+Data: 
+1) Hold-out: Rather than using all of our data for training, we can simply split our dataset into two sets: training and testing. A common split ratio is 80% for training and 20% for testing. We train our model until it performs well not only on the training set but also for the testing set. This indicates good generalization capability since the testing set represents unseen data that were not used for training. However, this approach would require a sufficiently large dataset to train on even after splitting.
+2) Cross-Validation: Split the data into multiple parts and train the model on different combinations (cross-validation). This ensures the model is tested on different chunks of data. Unlike hold-out, cross-validation allows all data to be eventually used for training but is also more computationally expensive than hold-out.
+3) Data augmentation: A larger dataset would reduce overfitting. If we cannot gather more data and are constrained to the data we have in our current dataset, we can apply data augmentation to artificially increase the size of our dataset. For example, if we are training for an image classification task, we can perform various image transformations to our image dataset (e.g., flipping, rotating, rescaling, shifting).
+4) Feature selection: Remove irrelevant or unnecessary features (columns) from the data so the model doesn’t learn from noise. This is useful when we have only a limited amount of training samples, each with a large number of features (columns). We should only select the most important features for training so that our model doesn’t need to learn for so many features and eventually overfit. 
+Learning algorithm:
+5) ("L1/L2") Regularization: This is a method used to keep a model from getting too complicated and to constrain our network from learning a model that is too complex, which may therefore overfit. It adds a kind of "fine" to the model if it tries to fit the training data too perfectly. This helps the model focus on general patterns instead of memorizing the training data exactly, which can make it work better on new, unseen data. (In L1 or L2 regularization, we can add a penalty term on the cost function to push the estimated coefficients towards zero (and not take more extreme values).)
+Model: 
+6) Simpler Models / Remove layers / number of units per layer: Use a simpler model with fewer parameters. Complex models tend to overfit because they try to capture every tiny detail in the data. We should have a model with a complexity that sufficiently balances between underfitting and overfitting for our task.
+7) Dropout: (This is a form of regularization) Randomly turn off certain neurons during training to prevent the model from becoming too reliant on specific patterns. In other words, using dropout, we can reduce interdependent learning among units, which may have led to overfitting. However, with dropout, we would need more epochs* for our model to converge. (*"Epochs" refers to the number of complete passes through the entire training dataset that the model goes through during training. Each epoch involves the model making predictions on the training data and adjusting its parameters based on the error.)
+8) Early stopping: We can first train our model for an arbitrarily large number of epochs and plot the validation loss graph (e.g., using hold-out). Once the validation loss begins to degrade (e.g., stops decreasing but rather begins increasing), we stop the training and save the current model. We can implement this either by monitoring the loss graph or set an early stopping trigger. The saved model would be the optimal model for generalization among different training epoch values.
+
+In other words: 
+Overfitting (Too Complex):
+What it is: The model is too complex and learns too much from the training data, including noise and random details that don’t matter. It does great on the training data but performs badly on new, unseen data.
+Example: Imagine drawing a squiggly line through every point, even the outliers. It fits the training data perfectly, but fails on new data.
+Result: The model performs well on training data but poorly on new data—it’s memorizing instead of learning general patterns.
+How to prevent: Prevent it by keeping the model simple, training it on varied data, and using techniques like regularization to balance performance.
+
+BONUS: 
+Underfitting (Too Simple):
+What it is: The model is too simple and doesn't learn enough from the data. It can't capture important patterns, so it performs poorly on both training and new data.
+Example: Imagine trying to draw a straight line through data points that clearly form a curve. The line doesn’t fit the data well at all.
+Result: The model doesn't perform well anywhere — it misses key information.
+How to prevent: Make sure your model is capable enough to capture the complexities in your data. You can add more features, use a more complex model, decrease regularization (make the rules, that prevent the model from fitting the data too closely, less strict), train longer. 
