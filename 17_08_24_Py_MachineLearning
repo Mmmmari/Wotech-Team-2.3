@@ -1,4 +1,4 @@
-Task: This is a complicated topic, teamwork is to look at scikit-learn library together. Suggested questions to discuss:
+Scikit-learn library
 
 1. What is an error rate? 
 
@@ -15,14 +15,12 @@ accuracy = accuracy_score(y_true, y_pred)
 error_rate = 1 - accuracy
 print(f"Error Rate: {error_rate}")
 
-
 2. Where you could use other machine-learning models? 
 
 There are many ways to classify machine learning models but most commonly there are 4 main types of models: 
 
 1) Supervised Machine Learning
-In this, the model gets trained on a labeled dataset. For example- we have data of cats and dogs. We add some kind of label to the groups (like image). If we add a new cat/dog then 
-the machine can predict which group it belongs. 
+In this, the model gets trained on a labeled dataset. For example- we have data of cats and dogs. We add some kind of label to the groups (like image). If we add a new cat/dog then the machine can predict which group it belongs to. 
 
 2) Unsupervised Machine Learning
 Unsupervised learning is a type of machine learning technique in which an algorithm discovers patterns and relationships using unlabeled data. 
@@ -33,7 +31,6 @@ For example in online shopping. If you have purchased some products in the past,
 3) Semi-Supervised Machine Learning
 Semi-Supervised learning is a machine learning algorithm that works between the supervised and unsupervised learning so it uses both labelled and unlabelled data. 
 It’s particularly useful when obtaining labeled data is costly, time-consuming, or resource-intensive. 
-This approach is useful when the dataset is expensive and time-consuming. 
 Semi-supervised learning is chosen when labeled data requires skills and relevant resources in order to train or learn from it.
 For example, when creating a language translation program. Some of the translation is labelled, but some of it is unlabeled to make more logical and accurate sentences. Thanks to this model, the translation programs have improved.
 
@@ -54,14 +51,14 @@ The model identifies inherent structures in the data, such as grouping similar i
 Techniques like clustering, dimensionality reduction, or association are commonly used.
 
 
-4. How to import different models from the scikit-learn package? 
+4. How to import different models from the scikit-learn package?
 
 There are numerous model types: <model> --> linear_model, ensemble, svm, tree etc.
 All module types available: https://scikit-learn.org/stable/
 
 CODE: from sklearn.<module> import <model>
 
-Exmaples:
+Examples:
 1) Linear Models (assume a linear relationship between input features and the target variable. E.g Predicting housing prices, credit scoring.): 
 	- from sklearn.linear_model import LinearRegression
   - from sklearn.linear_model import LogisticRegression
@@ -78,13 +75,13 @@ Exmaples:
   - from sklearn.ensemble import GradientBoostingRegressor
 
 
-5. How can you evaluate the performance of a machine learning model in scikit-learn? 
+5. How can you evaluate the performance of a machine learning model in scikit-learn?  
 
 When you want to know how good your model's predictions are, scikit-learn gives you three different ways to check:
 
 1) Estimator score method: Each model (like a classifier or regressor) has a built-in method called score(). This method gives you a quick way to check how good the model is based on its default criteria (like accuracy for classification).
 2) Scoring parameter: When you do things like cross-validation (testing the model on different parts of your data), scikit-learn uses a built-in scoring system to tell how well your model is doing. You can even define your own rules for scoring.
-3) Metric functions: Scikit-learn has a bunch of specific tools in the 'metric's' module. These tools calculate how much error your model is making. They are split into different types like classification metrics (for categorizing things), regression metrics (for predicting numbers), and clustering metrics (for grouping things).
+3) Metric functions: Scikit-learn has a bunch of specific tools in the 'metric's' module. These tools calculate how much error your model is making. They are split into different types like classification metrics (for categorizing things), regression metrics (for predicting numbers), and clustering metrics (for grouping things). (See more in the next wnswer)
 + Bonus) Finally, dummy estimators are simple models that make random predictions. You use them as a baseline to see if your real model is doing better than just guessing randomly.
 
 
@@ -102,11 +99,11 @@ Includes: Mean Absolute Error, Mean Squared Error, Root Mean Squared Error, R-sq
 
 3) Clustering Metrics
 For unsupervised learning tasks, clustering metrics help evaluate how well the algorithm has grouped similar instances. For example, dividing customers in to groups based on their spending behaviour. 
-Comparing their spending score (money spent on shopping) with their annual income. 
+Comparing their spending score (based on money spent on spending) with their annual income. 
 Includes: Silhouette Score, Adjusted Rand Index (ARI), Davies-Bouldin Index etc. 
 
 
-7. What is model overfitting, and how can it be prevented?
+7. What is model overfitting, and how can it be prevented? 
 
 Graph illustrating over- and underfitting: https://miro.medium.com/v2/resize:fit:720/format:webp/0*H377j9pbSHLQhkNd.png 
 Info from: https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d#253a
@@ -133,7 +130,7 @@ In other words:
 Overfitting (Too Complex):
 What it is: The model is too complex and learns too much from the training data, including noise and random details that don’t matter. It does great on the training data but performs badly on new, unseen data.
 Example: Imagine drawing a squiggly line through every point, even the outliers. It fits the training data perfectly, but fails on new data.
-Result: The model performs well on training data but poorly on new data—it’s memorizing instead of learning general patterns.
+Result: The model performs well on training data but poorly on new data — it’s memorizing instead of learning general patterns.
 How to prevent: Prevent it by keeping the model simple, training it on varied data, and using techniques like regularization to balance performance.
 
 BONUS: 
