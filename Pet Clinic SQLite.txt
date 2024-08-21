@@ -1,0 +1,97 @@
+/* Average age of pets by Kind
+SELECT Kind, AVG(Age) AS AverageAge
+FROM Pets
+GROUP BY Kind;*/
+
+/* Exclude dogs and cats
+SELECT * FROM Pets WHERE Kind != 'Dog' AND Kind != 'Cat';*/
+
+/* Owner ID and which pets they own
+SELECT OwnerID, GROUP_CONCAT(Name, ', ') AS Pets
+FROM Pets
+GROUP BY OwnerID;*/
+
+/* Oldest pet by Age
+SELECT Kind, Name, MAX(Age) AS OldestAge
+FROM Pets
+GROUP BY Kind;*/
+
+/* Most common pet name
+SELECT Name, COUNT(*) AS Frequency
+FROM Pets
+GROUP BY Name
+ORDER BY Frequency DESC
+LIMIT 5;*/
+
+/* All pets owned by owners from the same city "Livonia"
+SELECT Pets.Name AS PetName, Owners.Name AS OwnerName, Owners.City 
+FROM Pets 
+JOIN Owners ON Pets.OwnerID = Owners.OwnerID 
+WHERE Owners.City = 'Livonia';*/
+
+/* Owner name and pet name the same
+SELECT p.PetID, p.Name AS PetName, p.Kind, p.Sex, p.Age, o.Name AS OwnerName
+FROM Pets p
+JOIN Owners o ON p.OwnerID = o.OwnerID
+WHERE p.Name = o.Name;*/
+
+/* All the owners of pet name Bruce
+SELECT Pets.Name AS PetName, Owners.Name AS OwnerName
+FROM Pets
+JOIN Owners ON Pets.OwnerID = Owners.OwnerID
+WHERE Pets.Name='Bruce'*/
+
+/* Owner names and pet names they own
+SELECT Owners.Name AS HumanName, Pets.Name AS PetName
+FROM Owners
+JOIN Pets ON Owners.OwnerID = Pets.OwnerID
+GROUP BY Owners.Name, Pets.Name;*/
+
+/* Owners name and surname who havs at least 2 pets, in an alphabetical order
+SELECT 
+    p1.Name AS Pet1_Name,
+    p2.Name AS Pet2_Name,
+    o.Name AS Owner_First_Name,
+    o.Surname AS Owner_Last_Name
+FROM 
+    Pets p1
+    INNER JOIN Pets p2 ON p1.OwnerID = p2.OwnerID AND p1.PetID < p2.PetID
+    INNER JOIN Owners o ON p1.OwnerID = o.OwnerID
+ORDER BY 
+    o.Name,
+   o.Surname, 
+    p1.Name, 
+    p2.Name;*/
+    
+    
+/* All pets owned by owners with more than 1 pet, ordered by owner's first name alphabetically
+SELECT 
+    p.Name AS Pet_Name,
+    p.Kind,
+    p.Sex AS Pet_Sex,
+    p.Age AS Pet_Age,
+    o.Name AS Owner_First_Name,
+    o.Surname AS Owner_Last_Name
+FROM 
+    Pets p
+    INNER JOIN Owners o ON p.OwnerID = o.OwnerID
+WHERE 
+    p.OwnerID IN (
+        SELECT OwnerID
+        FROM Pets
+        GROUP BY OwnerID
+        HAVING COUNT(PetID) > 1
+    )
+ORDER BY 
+    o.Name;*/
+
+/* Pets with name length <3
+SELECT *
+FROM Pets
+WHERE LENGTH(Name) < 3;*/
+
+/* All female pets from Detroit 
+SELECT Pets.Name, Owners.City 
+FROM Pets 
+JOIN Owners ON Pets.OwnerID = Owners.OwnerID 
+WHERE Pets.Sex = 'female' AND Owners.City = 'Detroit';*/
