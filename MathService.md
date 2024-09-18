@@ -1,3 +1,8 @@
+1. Create MathService
+2. Create a method sum()
+3. Create a unit test for this method.
+Hi, I want to be able to get a sum of 2 numbers, but if the sum is above 100, then I want to receive 0 instead.
+
 DatoriumApiApplications.java
 
 ```java
