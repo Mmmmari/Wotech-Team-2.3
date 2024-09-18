@@ -27,7 +27,6 @@ public class DatoriumApiApplication {
 		var mathService = new MathService();
 		System.out.println(mathService.getSum(1, 2));
 
-		// Start Spring Boot application
 		SpringApplication.run(DatoriumApiApplication.class, args);
 	}
 }
