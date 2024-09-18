@@ -86,6 +86,13 @@ class DatoriumApiApplicationTests {
 	}
 ```
 
-Result: 
+Result_Test_1: 
 
 ![Kuvatõmmis 2024-09-18 204159](https://github.com/user-attachments/assets/f5231c92-f009-4da5-885f-d545712260d0)
+
+Result_Test_2: 
+
+![Kuvatõmmis 2024-09-18 205438](https://github.com/user-attachments/assets/555f6561-c4a4-401e-8113-2489cc0a60db)
+
+
+
