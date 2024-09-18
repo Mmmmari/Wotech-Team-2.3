@@ -86,6 +86,14 @@ class DatoriumApiApplicationTests {
 			var sum = mathService.getSum(1, 2);
 			Assert.isTrue(sum == 3,  "Hey, the sum should be the result. Unless the sum exceeds hundred.");
 		}
+
+	@Test
+	void WHEN_SumOverHundred_THEN_Result_Zero() {
+
+		var mathService = new MathService();
+		var sum = mathService.getSum(100,2);
+		Assert.isTrue(sum == 0,  "Hey, the sum exceeds hundred.");
+	}
 	}
 ```
 
