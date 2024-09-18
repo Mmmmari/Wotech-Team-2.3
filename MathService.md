@@ -4,7 +4,6 @@
 Hi, I want to be able to get a sum of 2 numbers, but if the sum is above 100, then I want to receive 0 instead.
 
 DatoriumApiApplications.java
-
 ```java
 package com.datorium.Datorium.API;
 
@@ -35,7 +34,6 @@ public class DatoriumApiApplication {
 ```
 
 MathService.java: 
-
 ```java
 package com.datorium.Datorium.API;
 
@@ -52,11 +50,9 @@ public class MathService {
 ```
 
 Result: 
-
 ![Kuvatõmmis 2024-09-18 203602](https://github.com/user-attachments/assets/40ee2553-a1ff-45b7-9d22-dab51378c6a2)
 
 DatoriumApiApplicationTest.java
-
 ```java
 package com.datorium.Datorium.API;
 
@@ -92,11 +88,9 @@ class DatoriumApiApplicationTests {
 ```
 
 Result_Test_1: 
-
 ![Kuvatõmmis 2024-09-18 204159](https://github.com/user-attachments/assets/f5231c92-f009-4da5-885f-d545712260d0)
 
 Result_Test_2: 
-
 ![Kuvatõmmis 2024-09-18 205438](https://github.com/user-attachments/assets/555f6561-c4a4-401e-8113-2489cc0a60db)
 
 
